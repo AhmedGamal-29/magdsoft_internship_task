@@ -1,14 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:magdsoft_internship_task/constants/end_points.dart';
 
-class DioHelper
-{
+class DioHelper {
   static late Dio dio;
 
-  static init()
-  {
-    dio= Dio(
+  static init() {
+    dio = Dio(
       BaseOptions(
         baseUrl: baseURL,
         receiveDataWhenStatusError: true,
@@ -18,9 +15,9 @@ class DioHelper
 
   //get data from the api
   static Future<Response> getData({
-  required String method,
-  required Map<String, dynamic> query,
-}) async {
+    required String method,
+    required Map<String, dynamic> query,
+  }) async {
     return await dio.get(
       method,
       queryParameters: query,
